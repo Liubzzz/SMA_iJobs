@@ -107,52 +107,6 @@ class UserProfileActivity : ComponentActivity() {
 
 
 
-        btn_delete_service.setOnClickListener {
-            var serviceTitle= servicetobedeleted.text.toString()
-            if(serviceTitle.isNotEmpty()){
-
-
-
-
-
-
-
-
-                databaseReference = firebaseDatabase?.getReference("services")
-
-
-                databaseReference?.addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onDataChange(snapshot: DataSnapshot) {
-                        for (ds in snapshot.children) {
-
-                            val id = ds.key.toString()
-                            val jobTitle = ds.child("serviceTitle").value.toString()
-
-
-
-                            if(serviceTitle==jobTitle)
-                                ServiceCharacteristics.setKey(id)
-                        }
-
-                    }
-
-                    override fun onCancelled(error: DatabaseError) {
-                        Log.e("ooooo", "onCancelled: ${error.toException()}")
-                    }
-                })
-                servicetobedeleted.text.clear()
-
-                deleteService()
-            }
-
-
-            else
-                Toast.makeText(this, "Enter a service you want to delete", Toast.LENGTH_LONG).show()
-
-        }
-
-
-
 
 
 
