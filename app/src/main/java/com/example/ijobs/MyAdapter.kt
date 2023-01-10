@@ -20,10 +20,15 @@ class MyAdapter(private val serviceList:ArrayList<Services>):RecyclerView.Adapte
        val currentService= serviceList[position]
 
         holder.title.text=currentService.serviceTitle
+
         holder.description.text=currentService.serviceDescription
+
         holder.phoneNumber.text=currentService.servicePhone
+
         holder.price.text=currentService.servicePrice + " Lei"
+
         holder.location.text=currentService.serviceLocation
+
         holder.jobcallbtn.setOnClickListener{
            ProfileCharacteristics.setPhonenumber(currentService.servicePhone.toString())
             ProfileCharacteristics.setSignaltransit("call")
