@@ -60,12 +60,13 @@ class RegisterActivity : ComponentActivity() {
 //            Password must contain at least one special character like ! @ # & ( ).
 //            Password must contain a length of at least 8 characters and a maximum of 20 characters.
 
+
             if (!password.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#&()–[{}]:;',?/*~\$^+=<>]).{8,20}\$".toRegex()))
                 Toast.makeText(this, "password not valid", Toast.LENGTH_LONG).show()
             else
 
                 if (password != confirmpassword && password.isNotEmpty())
-                    Toast.makeText(this, "passwords don't match", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "passwords don't match, CHECK", Toast.LENGTH_LONG).show()
                 else {
 
                     val userId = database.push().key!!
