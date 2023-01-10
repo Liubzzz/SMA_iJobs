@@ -16,6 +16,5 @@ class GifActivity : ComponentActivity() {
             startActivity(intent)
         }, 2300)
     }
-
 }
 

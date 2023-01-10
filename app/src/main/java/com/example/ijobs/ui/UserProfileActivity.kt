@@ -73,8 +73,6 @@ class UserProfileActivity : ComponentActivity() {
         })
 
 
-
-
         btneditdescription.setOnClickListener{
             val intent = Intent(this,EditProfileDescription::class.java)
             startActivity(intent)
@@ -105,16 +103,9 @@ class UserProfileActivity : ComponentActivity() {
         }
 
 
-
-
         btn_delete_service.setOnClickListener {
             var serviceTitle= servicetobedeleted.text.toString()
             if(serviceTitle.isNotEmpty()){
-
-
-
-
-
 
 
 
@@ -151,14 +142,6 @@ class UserProfileActivity : ComponentActivity() {
                 Toast.makeText(this, "Enter a service you want to delete", Toast.LENGTH_LONG).show()
 
         }
-
-
-
-
-
-
-
-
 
         serviceRecycerView=findViewById(R.id.my_serviceList)
         serviceRecycerView.layoutManager= LinearLayoutManager(this)
@@ -205,12 +188,6 @@ class UserProfileActivity : ComponentActivity() {
     }
 
     fun deleteService() {
-
-
-
-
-
-
         database = FirebaseDatabase.getInstance().getReference("services")
         database.child(ServiceCharacteristics.getKey().toString()).removeValue().addOnSuccessListener {
 
@@ -221,10 +198,6 @@ class UserProfileActivity : ComponentActivity() {
                 Toast.makeText(this, "Failed", Toast.LENGTH_LONG).show()
 
             }
-
-
-
-
     }
 
 
